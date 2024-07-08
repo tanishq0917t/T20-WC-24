@@ -3,9 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ICC Men's T20 WC Analysis</title>
+    <title>Tanishq Rawat</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .image-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+        .image-container img {
+            margin: 10px;
+            max-width: 100%;
+            height: auto;
+        }
+        select {
+            padding: 10px;
+            font-size: 16px;
+        }
+        h1 {
+            font-size: 2em;
+            margin: 20px;
+        }
+        h2 {
+            font-size: 1.5em;
+            margin: 10px 0;
+        }
+        .select-option-text {
+            font-size: 1.25em; /* Change this value to increase or decrease the size */
+        }
+        @media (min-width: 768px) {
+            .image-container img {
+                max-width: 75%;
+                max-height: 75%;
+            }
+        }
+    </style>
+    <script>
+        function displaySelectedOption() {
+            // Hide all divisions
+            var allDivs = document.querySelectorAll('div[id]');
+            allDivs.forEach(div => div.style.display = 'none');
+
+            // Get the selected option value
+            var selectedValue = document.getElementById('panel').value;
+
+            // Show the corresponding division
+            var selectedDiv = document.getElementById(selectedValue);
+            if (selectedDiv) {
+                selectedDiv.style.display = 'block';
+            }
+        }
+
+        // Call the function to show the default option on page load
+        window.onload = function() {
+            displaySelectedOption();
+        }
+    </script>
 </head>
 <body>
-    
+    <center>
+        <h1>ICC Men's T-20 WC Data Analysis by Tanishq Rawat</h1>
+        <b class="select-option-text">Select Option: </b>
+        <select id="panel" name="panel" onchange="displaySelectedOption()">
+            <option value="0" selected>Top Individual Scores</option>
+            <option value="1">Top Team Scores</option>
+            <option value="2">Top Win Percentage</option>
+            <option value="3">Top 6 Hitting Teams</option>
+            <option value="4">Top 6 Hitters</option>
+            <option value="5">Top 4 Hitting Teams</option>
+            <option value="6">Top 4 hitters</option>
+            <option value="7">Bowlers with Most Dot Balls</option>
+            <option value="8">Batters with Most Dot Balls</option>
+        </select>
+        <div id="0" style="display: none;">
+            <img src="/home/tanishqrawat/Pictures/Pictures/Top Individual Scores.png" alt="Top Individual Scores">
+        </div>
+        <div id="1" style="display: none;">
+            <img src="/home/tanishqrawat/Pictures/Pictures/TopTeamScores.png" alt="Top Team Scores">
+        </div>
+        <div id="2" style="display: none;">
+            <h2>Top Win Percentage</h2>
+            <img src="/home/tanishqrawat/Pictures/Pictures/Win Percentage.png" alt="Top Win Percentage">
+        </div>
+        <div id="3" style="display: none;">
+            <img src="/home/tanishqrawat/Pictures/Pictures/Top Six Hitting Teams.png" alt="Top Six Hitting Teams">
+        </div>
+        <div id="4" style="display: none;">
+            <img src="/home/tanishqrawat/Pictures/Pictures/Top Six Hitters.png" alt="Top Six Hitters">
+        </div>
+        <div id="5" style="display: none;">
+            <img src="/home/tanishqrawat/Pictures/Pictures/Top Four Hitting Teams.png" alt="Top Four Hitting Teams">
+        </div>
+        <div id="6" style="display: none;">
+            <img src="/home/tanishqrawat/Pictures/Pictures/Top Four Hitters.png" alt="Top Four Hitters">
+        </div>
+        <div id="7" style="display: none;">
+            <img src="/home/tanishqrawat/Pictures/Pictures/Bowler with Most Dot balls.png" alt="Bowlers with Most Dot Balls">
+        </div>
+        <div id="8" style="display: none;">
+            <img src="/home/tanishqrawat/Pictures/Pictures/Batter with Most Dot Balls.png" alt="Batters with Most Dot Balls">
+        </div>
+    </center>
 </body>
 </html>
